@@ -14,7 +14,7 @@ public class Driver {
             //BankAccount myAccount = (BankAccount) baCls.newInstance(); - need to do if you run 'Class baCls = BankAccount.class;'
 
             aStorage.setValue(myAccount);
-// Deposit
+            // Deposit
             myAccount.deposit(15);
         }
         catch ( InstantiationException e ) {
@@ -32,5 +32,4 @@ public class Driver {
         }
 
     }
-
 }
