@@ -31,7 +31,7 @@ object Hammurabi {
         You are in year   ${i}   of your ten year rule.
         In the previous year   $starved  people starved to death.
         In the previous year   $immigrants   people entered the kingdom.
-        The population is now   $population  .
+        The population is now   $population.
         We harvested   $harvest   bushels at   $bushelsPerAcre   bushels per acre.
         Rats destroyed   $rats_ate   bushels, leaving   $bushelsInStorage   bushels in storage.
         The city owns   $acresOwned   acres of land.
@@ -145,7 +145,7 @@ object Hammurabi {
   }
 
   def askHowManyAcresToPlant(bushelsAvailable:Int, acresOwned:Int, population:Int): Int = {
-    var acresToPlant = readInt(s"We have ${acresOwned} acres available, how many should we plant? \n")
+    var acresToPlant = readInt(s"We have ${acresOwned} acres available and $bushelsAvailable bushels left, how many should we plant? \n")
     while (acresToPlant > acresOwned) {
       println(s"Oh Great H man, we own but $acresOwned, please choose less. \n")
       acresToPlant = readInt("So how many acres should we plant? \n")
