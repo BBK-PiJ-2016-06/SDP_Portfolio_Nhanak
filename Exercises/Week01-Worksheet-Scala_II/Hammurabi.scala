@@ -24,7 +24,7 @@ object Hammurabi {
     for (i <- 1 to 10) {
 
       totalStarved += starved
-      totalPopulation += population
+      totalPopulation += immigrants
 
       println(s"""
         O great Hammurabi!
@@ -37,6 +37,7 @@ object Hammurabi {
         The city owns   $acresOwned   acres of land.
         Land is currently worth   $pricePerAcre   bushels per acre.
         There were   $plagueDeaths   deaths from the plague.""")
+      println("\n")
 
 
       var acresToBuy = askHowMuchLandToBuy(bushelsInStorage, pricePerAcre)
@@ -97,13 +98,13 @@ object Hammurabi {
     var reelect : Boolean = true
 
     println(s"You let this many people starve: ${totalStarved}")
-    println(s"This is how many acres you ended up with ${acresOwned}")
+    println(s"This is how many acres you ended up with: ${acresOwned}")
     println(s"This is how many people have ever been in your kingdom: ${totalPopulation}")
 
     val growthPercentage = ( (acresOwned-1000) * 100) / 1000
     val percentageStarved = (totalStarved * 100) / totalPopulation
 
-    if (percentageStarved > 10) {
+    if (percentageStarved > 20) {
       println(s"You let $percentageStarved % of your people starve, you monster")
       reelect = false
     }
@@ -147,7 +148,7 @@ object Hammurabi {
   def askHowManyAcresToPlant(bushelsAvailable:Int, acresOwned:Int, population:Int): Int = {
     var acresToPlant = readInt(s"We have ${acresOwned} acres available and $bushelsAvailable bushels left, how many should we plant? \n")
     while (acresToPlant > acresOwned) {
-      println(s"Oh Great H man, we own but $acresOwned, please choose less. \n")
+      println(s"Oh Great H man, we occupy but $acresOwned acres, please choose less. \n")
       acresToPlant = readInt("So how many acres should we plant? \n")
     }
     while (bushelsAvailable < acresToPlant * 2) {
