@@ -1,4 +1,5 @@
 import scala.math._
+import scala.io.StdIn.{readLine, readInt}
 
 object WorkSheet_I_For_Loop {
 
@@ -10,7 +11,9 @@ object WorkSheet_I_For_Loop {
     while(i != 0) {
       println("Enter a number")
       i = readInt()
-      if (i !=0) { println("You entered: " + i + ", and its square is: " + (i*i))}
+      if (i !=0) {
+        println( s"You entered: ${i} and its square is: ${i*i}")
+      }
     }
     //"Use a for loop"
 
