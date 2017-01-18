@@ -6,10 +6,10 @@ import scala.util.Random
 /**
   * Created by nathanhanak on 1/18/17.
   */
-class FireSensor(val location: String) extends Sensors {
+class FireSensor(val location: String, val sensorType: String = "Fire Sensor") extends Sensors {
 
-  location : String
-  var batteryPercentage : Int = 100
+  private location : String
+  private var batteryPercentage : Int = 100
 
   /**
     *  returns true/false for whether the sensor is triggered or not.
@@ -21,7 +21,7 @@ class FireSensor(val location: String) extends Sensors {
     if (Random.nextInt(100) < 5) true else false
   }
 
-  private[this] def checkBatterylife: Unit = {
+  private[this] def checkBatterylife(): Unit = {
     if (batteryPercentage <= 0) {
       throw new IllegalStateException(s"Battery for ${this.getClass.toString} at ${location} is dead")
     }
@@ -43,11 +43,10 @@ class FireSensor(val location: String) extends Sensors {
   /**
     * returns a textual description of the sensor type such as "Fire sensor"
     * or "Smoke sensor".
-    * @return
+    * @return String describing the type of sensor
     */
-  def getSensortype(): String = {
-    return "Fire sensor"
-  }
+  def getSensortype(): String = sensorType
+
 
   /**
     * Returns a number between 0-100 where 0 is empty and
