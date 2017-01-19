@@ -6,10 +6,10 @@ import scala.util.Random
 /**
   * Created by nathanhanak on 1/18/17.
   */
-class FireSensor(val location: String, val sensorType: String = "Fire Sensor") extends Sensors {
+class FireSensor(val location: String) extends Sensor {
 
-  private location : String
-  private var batteryPercentage : Int = 100
+  private val sensorType: String = "Fire Sensor"
+  protected var batteryPercentage : Int = 100
 
   /**
     *  returns true/false for whether the sensor is triggered or not.
@@ -21,13 +21,13 @@ class FireSensor(val location: String, val sensorType: String = "Fire Sensor") e
     if (Random.nextInt(100) < 5) true else false
   }
 
-  private[this] def checkBatterylife(): Unit = {
-    if (batteryPercentage <= 0) {
+  protected def checkBatteryLife(): Unit = {
+    if (getBatteryPercentage() <= 0) {
       throw new IllegalStateException(s"Battery for ${this.getClass.toString} at ${location} is dead")
     }
   }
 
-  private[this] def drainBattery(drainAmount:Int): Unit = {
+  protected def drainBattery(drainAmount:Int): Unit = {
     batteryPercentage -= drainAmount
   }
 

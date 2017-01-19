@@ -5,7 +5,9 @@ import scala.util.Random
 /**
   * Created by nathanhanak on 1/18/17.
   */
-class SmokeSensor(location: String, sensorType: String = "Smoke Sensor") extends FireSensor(location, sensorType) {
+class SmokeSensor(override val location: String) extends FireSensor(location) {
+
+  private val sensorType: String = "Smoke sensor"
 
   override def isTriggered(): Boolean = {
     checkBatteryLife()
@@ -16,3 +18,4 @@ class SmokeSensor(location: String, sensorType: String = "Smoke Sensor") extends
 
 
 }
+

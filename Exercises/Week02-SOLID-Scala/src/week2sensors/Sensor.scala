@@ -3,7 +3,7 @@ package week2sensors
 /**
   * Created by nathanhanak on 1/18/17.
   */
-trait Sensors {
+trait Sensor {
 
   /**
     *  returns true/false for whether the sensor is triggered or not.
