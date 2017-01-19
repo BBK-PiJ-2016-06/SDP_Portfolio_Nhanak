@@ -1,9 +1,8 @@
 package week2sensors;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SmokeSensor implements Sensor {
+public class SmokeSensor implements HazardSensor {
 
     private Double batteryPercentage = 100.0;
     private String sensorType = "Smoke Sensor";
@@ -21,7 +20,6 @@ public class SmokeSensor implements Sensor {
         }
         batteryPercentage -= 20;
         double random = ThreadLocalRandom.current().nextDouble(0, 100);
-        System.out.println(random + " is the random");
         return ( random < 10);
     }
 

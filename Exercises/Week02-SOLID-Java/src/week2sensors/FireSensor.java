@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by nathanhanak on 1/19/17.
  */
-public class FireSensor implements Sensor {
+public class FireSensor implements HazardSensor {
 
     private Double batteryPercentage = 100.0;
     private String sensorType = "Fire Sensor";

@@ -34,4 +34,12 @@ public class ControlUnitTest {
         assertTrue(controlUnit.getSensorList().contains(smokeSensor1));
     }
 
+    @Test
+    public void testsPollSensorsDrainsEachSensorAsExpected() {
+        controlUnit.addSensorToUnit(fireSensor1);
+        controlUnit.addSensorToUnit(smokeSensor1);
+        controlUnit.pollSensors();
+        assertEquals(90, fireSensor1.getBatteryPercentage(), 0.01);
+        assertEquals(80, smokeSensor1.getBatteryPercentage(), 0.01);
+    }
 }

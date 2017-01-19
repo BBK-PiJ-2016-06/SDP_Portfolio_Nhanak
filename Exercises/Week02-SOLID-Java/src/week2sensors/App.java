@@ -13,6 +13,9 @@ public class App {
 
     public static void main(String[] args) throws IOException {
         ControlUnit controlUnit = new ControlUnit();
+        controlUnit.addSensorToUnit(new FireSensor("Chicken Coop"));
+        controlUnit.addSensorToUnit(new SmokeSensor("Kitchen"));
+
 
         Scanner scanner = new Scanner(System.in);
         String input = "";
@@ -25,3 +28,4 @@ public class App {
         }
     }
 }
+
