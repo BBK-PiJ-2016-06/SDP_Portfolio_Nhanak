@@ -9,17 +9,24 @@ import java.util.List;
 
 public class ControlUnit {
 
-    public void pollSensors() {
-        List<Sensor> sensors = new ArrayList<Sensor>();
-        sensors.add(new FireSensor("Basement"));
-        sensors.add(new SmokeSensor("Auditorium"));
+    List<Sensor> sensorList = new ArrayList<>();
 
-        for (Sensor sensor : sensors) {
+    public void pollSensors() {
+
+        for (Sensor sensor : sensorList) {
             if (sensor.isTriggered()) {
                 System.out.println("A " + sensor.getSensorType() + " sensor was triggered at " + sensor.getLocation());
             } else {
                 System.out.println("Polled " + sensor.getSensorType() + " at " + sensor.getLocation() + " successfully");
             }
         }
+    }
+
+    public void addSensorToUnit(Sensor newSensor) {
+        sensorList.add(newSensor);
+    }
+
+    public List<Sensor> getSensorList() {
+        return sensorList;
     }
 }
