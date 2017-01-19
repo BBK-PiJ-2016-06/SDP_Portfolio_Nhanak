@@ -23,7 +23,7 @@ trait Sensor {
     * or "Smoke sensor".
     * @return
     */
-  def getSensortype(): String
+  def getSensorType(): String
 
   /**
     * Returns a number between 0-100 where 0 is empty and

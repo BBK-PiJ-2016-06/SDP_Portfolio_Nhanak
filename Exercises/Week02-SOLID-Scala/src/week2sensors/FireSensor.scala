@@ -45,7 +45,7 @@ class FireSensor(val location: String) extends Sensor {
     * or "Smoke sensor".
     * @return String describing the type of sensor
     */
-  def getSensortype(): String = sensorType
+  def getSensorType(): String = sensorType
 
 
   /**
