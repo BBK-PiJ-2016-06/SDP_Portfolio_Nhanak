@@ -1,6 +1,8 @@
 package week2sensors;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,9 +14,10 @@ public class App {
     private static final String POLL = "poll";
 
     public static void main(String[] args) throws IOException {
-        ControlUnit controlUnit = new ControlUnit();
-        controlUnit.addSensorToUnit(new FireSensor("Chicken Coop"));
-        controlUnit.addSensorToUnit(new SmokeSensor("Kitchen"));
+        List<Sensor> constructorList = new ArrayList<>();
+        ControlUnit controlUnit = new ControlUnit(constructorList);
+        controlUnit.addSensorToSensorList(new FireSensor("Chicken Coop"));
+        controlUnit.addSensorToSensorList(new SmokeSensor("Kitchen"));
 
 
         Scanner scanner = new Scanner(System.in);

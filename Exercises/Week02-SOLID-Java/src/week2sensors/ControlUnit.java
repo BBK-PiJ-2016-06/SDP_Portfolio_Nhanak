@@ -11,6 +11,10 @@ public class ControlUnit {
 
     List<Sensor> sensorList = new ArrayList<>();
 
+    public ControlUnit(List<Sensor> sensorList) {
+     this.sensorList = sensorList;
+    }
+
     public void pollSensors() {
 
         for (Sensor sensor : sensorList) {
@@ -22,7 +26,7 @@ public class ControlUnit {
         }
     }
 
-    public void addSensorToUnit(Sensor newSensor) {
+    public void addSensorToSensorList(Sensor newSensor) {
         sensorList.add(newSensor);
     }
 

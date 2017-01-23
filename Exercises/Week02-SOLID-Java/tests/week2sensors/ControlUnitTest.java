@@ -2,6 +2,10 @@ package week2sensors;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -10,13 +14,14 @@ import static org.junit.Assert.assertTrue;
  */
 public class ControlUnitTest {
 
-    ControlUnit controlUnit;
+    private ControlUnit controlUnit;
     FireSensor fireSensor1;
     SmokeSensor smokeSensor1;
+    List<Sensor> sensorList = new ArrayList<>();
 
     @Before
     public void SetUp(){
-        controlUnit = new ControlUnit();
+        controlUnit = new ControlUnit(sensorList);
         fireSensor1 = new FireSensor("Basement");
         smokeSensor1 = new SmokeSensor("Armory");
     }
@@ -27,17 +32,17 @@ public class ControlUnitTest {
     }
 
     @Test
-    public void testsNewContolUnitSensorListContainsExpectedSensorsAfterAdding() {
-        controlUnit.addSensorToUnit(fireSensor1);
-        controlUnit.addSensorToUnit(smokeSensor1);
+    public void testsNewControlUnitSensorListContainsExpectedSensorsAfterAdding() {
+        controlUnit.addSensorToSensorList(fireSensor1);
+        controlUnit.addSensorToSensorList(smokeSensor1);
         assertTrue(controlUnit.getSensorList().contains(fireSensor1));
         assertTrue(controlUnit.getSensorList().contains(smokeSensor1));
     }
 
     @Test
     public void testsPollSensorsDrainsEachSensorAsExpected() {
-        controlUnit.addSensorToUnit(fireSensor1);
-        controlUnit.addSensorToUnit(smokeSensor1);
+        controlUnit.addSensorToSensorList(fireSensor1);
+        controlUnit.addSensorToSensorList(smokeSensor1);
         controlUnit.pollSensors();
         assertEquals(90, fireSensor1.getBatteryPercentage(), 0.01);
         assertEquals(80, smokeSensor1.getBatteryPercentage(), 0.01);

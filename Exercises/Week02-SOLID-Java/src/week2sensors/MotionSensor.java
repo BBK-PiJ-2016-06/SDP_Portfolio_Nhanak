@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by nathanhanak on 1/19/17.
  */
-public class MotionSensor implements Sensor {
+public class MotionSensor implements SecuritySensor {
 
     private String sensorType = "Motion Sensor";
     private String location;
