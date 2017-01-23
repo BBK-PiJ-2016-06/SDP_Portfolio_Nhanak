@@ -14,10 +14,13 @@ public class App {
     private static final String POLL = "poll";
 
     public static void main(String[] args) throws IOException {
-        List<Sensor> constructorList = new ArrayList<>();
-        ControlUnit controlUnit = new ControlUnit(constructorList);
+        List<Sensor> constructorList1 = new ArrayList<>();
+        List<Sensor> constructorList2 = new ArrayList<>();
+        ControlUnit controlUnit = new ControlUnit(constructorList1);
+        SecurityControlUnit secControlUnit = new SecurityControlUnit(constructorList2);
         controlUnit.addSensorToSensorList(new FireSensor("Chicken Coop"));
         controlUnit.addSensorToSensorList(new SmokeSensor("Kitchen"));
+        secControlUnit.addSensorToSensorList(new MotionSensor("Yard"));
 
 
         Scanner scanner = new Scanner(System.in);
@@ -27,6 +30,7 @@ public class App {
             input = scanner.nextLine();
             if (input.equals(POLL)) {
                 controlUnit.pollSensors();
+                secControlUnit.pollSensors();
             }
         }
     }

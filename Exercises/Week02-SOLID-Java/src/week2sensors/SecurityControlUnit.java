@@ -18,7 +18,7 @@ public class SecurityControlUnit extends ControlUnit {
         if(timeToCheck()) {
             super.pollSensors();
         } else {
-            System.out.println("Sensors not activated at " + LocalTime.now().toString());
+            System.out.println("Security Sensors not activated at " + LocalTime.now().toString());
         }
     }
 
