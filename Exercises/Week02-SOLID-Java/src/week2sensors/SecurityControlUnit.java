@@ -10,7 +10,6 @@ public class SecurityControlUnit extends ControlUnit {
 
     public SecurityControlUnit(List<Sensor> sensorList) {
         super(sensorList);
-
     }
 
     @Override

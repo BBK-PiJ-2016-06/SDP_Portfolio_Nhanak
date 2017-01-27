@@ -2,6 +2,7 @@ package week2sensors;
 
 import org.junit.Before;
 import org.junit.Test;
+import week2sensors.TriggeredResponses.NotifyUserSMS;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +19,15 @@ public class ControlUnitTest {
     FireSensor fireSensor1;
     SmokeSensor smokeSensor1;
     List<Sensor> sensorList = new ArrayList<>();
+    List<TriggeredResponse> responses = new ArrayList<>();
+    TriggeredResponse sms = new NotifyUserSMS();
 
     @Before
     public void SetUp(){
+        responses.add(sms);
         controlUnit = new ControlUnit(sensorList);
-        fireSensor1 = new FireSensor("Basement");
-        smokeSensor1 = new SmokeSensor("Armory");
+        fireSensor1 = new FireSensor("Basement", responses);
+        smokeSensor1 = new SmokeSensor("Armory", responses);
     }
 
     @Test

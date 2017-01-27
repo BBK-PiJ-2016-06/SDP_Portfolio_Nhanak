@@ -2,6 +2,8 @@ package week2sensors;
 
 import org.junit.Before;
 import org.junit.Test;
+import week2sensors.TriggeredResponses.NotifyUserSMS;
+import week2sensors.TriggeredResponses.ReleaseAttackDogs;
 
 import java.time.*;
 import java.util.ArrayList;
@@ -19,12 +21,17 @@ public class SecurityControlUnitTest {
     MotionSensor motionSensor1;
     MotionSensor motionSensor2;
     List<Sensor> sensorList = new ArrayList<>();
+    List<TriggeredResponse> responses = new ArrayList<>();
+    TriggeredResponse dogs = new ReleaseAttackDogs();
+    TriggeredResponse sms = new NotifyUserSMS();
 
     @Before
     public void SetUp(){
+        responses.add(dogs);
+        responses.add(sms);
         controlUnit = new SecurityControlUnit(sensorList);
-        motionSensor1 = new MotionSensor("Basement");
-        motionSensor2 = new MotionSensor("Armory");
+        motionSensor1 = new MotionSensor("Basement", responses);
+        motionSensor2 = new MotionSensor("Armory", responses);
     }
 
     @Test
