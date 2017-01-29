@@ -114,16 +114,17 @@ class PublicScalaBasicsSuite extends FunSuite {
     }
   }
 
-  // test("[3] sumChars should sum up the characters as integers from its parameters") {
-  //   TreeTraversals.getMethod("src/main/scala/basics/ScalaBasics.scala", "sumChars") match {
-  //     case Some(method) =>
-  //       assert(TreeTraversals.hasVarDef(method), "Your implementation did not use a var declaration")
-  //       assert(TreeTraversals.hasForEach(method), "You implementation must use a for loop")
-  //     case None =>
-  //       fail("The method isPalindrome does not exist")
-  //   }
-  //   assert(sumChars("chicken".toCharArray: _*) == 725, "chicken should sum to 725")
-  //   assert(sumChars("the true sign of intelligence is not ...".toCharArray: _*) == 3601, "this should sum to 3601")
-  // }
+  test("[7] wordCounter should return true if a map collects sum of instances for each unique word") {
+    val stringArray1 = Array("What the holy Dickens?", "What the holy brazen Dickens Charles?")
+    val expectedMap1 = Map("holy" -> 2, "What" -> 2, "brazen" -> 1, "Dickens" -> 2, "Charles" -> 1, "the" -> 2)
+    val stringArray2 = Array("one", "one")
+    val expectedMap2 = Map("one" -> 2)
+    val stringArray3 = Array("One one one t-wo two t'wo", "5 5 two one one One t-wo t'wo")
+    val expectedMap3 = Map("One" -> 2, "t-wo" -> 2, "two" -> 4, "5" -> 5, "555" -> 1, "one" -> 4)
+    assert(wordCounter(stringArray1) == expectedMap1)
+    assert(wordCounter(stringArray2) == expectedMap2)
+    assert(wordCounter(stringArray3) == expectedMap3)
+  }
+
 
 }

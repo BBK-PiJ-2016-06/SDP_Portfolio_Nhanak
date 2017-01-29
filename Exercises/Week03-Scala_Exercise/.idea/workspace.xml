@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="563adcd0-da29-480c-a9ef-0cbe9c088d4c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/App.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/FireSensor.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/FireSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/MotionSensor.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/MotionSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/SecurityControlUnit.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/SecurityControlUnit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/SmokeSensor.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/SmokeSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponse.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyFireBrigade.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyFireBrigade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyPolice.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyPolice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyUserSMS.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/NotifyUserSMS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/ReleaseAttackDogs.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/src/week2sensors/TriggeredResponses/ReleaseAttackDogs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/ControlUnitTest.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/ControlUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/FireSensorTest.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/FireSensorTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/SecurityControlUnitTest.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/SecurityControlUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/SmokeSensorTest.java" afterPath="$PROJECT_DIR$/../Week02-SOLID-Java/tests/week2sensors/SmokeSensorTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/basics/ScalaBasics.scala" afterPath="$PROJECT_DIR$/src/main/scala/basics/ScalaBasics.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/basics/PublicScalaBasicsSuite.scala" afterPath="$PROJECT_DIR$/src/test/scala/basics/PublicScalaBasicsSuite.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,8 +31,8 @@
       <file leaf-file-name="ScalaBasics.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/basics/ScalaBasics.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="60" column="44" lean-forward="false" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+            <state relative-caret-position="333">
+              <caret line="212" column="0" lean-forward="true" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,8 +41,8 @@
       <file leaf-file-name="PublicScalaBasicsSuite.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/basics/PublicScalaBasicsSuite.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="318">
+              <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,6 +62,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/basics/ScalaBasics.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/basics/PublicScalaBasicsSuite.scala" />
       </list>
     </option>
   </component>
@@ -86,7 +73,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-16" />
+    <option name="x" value="-2" />
     <option name="y" value="23" />
     <option name="width" value="1276" />
     <option name="height" value="777" />
@@ -238,8 +225,8 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="ScalaTest.PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop">
-    <configuration default="false" name="PublicScalaBasicsSuite.[1] The add function should return the addition of a and b" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+  <component name="RunManager" selected="ScalaTest.PublicScalaBasicsSuite.[7] wordCounter should return true if a map collects sum of instances for each unique word">
+    <configuration default="false" name="PublicScalaBasicsSuite.[3] The base36 function should return the base 36 equivalent of the given BigInt" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="week03" />
       <setting name="path" value="basics.PublicScalaBasicsSuite" />
@@ -248,7 +235,41 @@
       <setting name="params" value="" />
       <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
       <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="[1] The add function should return the addition of a and b" />
+      <setting name="testName" value="[3] The base36 function should return the base 36 equivalent of the given BigInt" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="PublicScalaBasicsSuite.[5] The splitInHalf function should split a string in half" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="week03" />
+      <setting name="path" value="basics.PublicScalaBasicsSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="[5] The splitInHalf function should split a string in half" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="week03" />
+      <setting name="path" value="basics.PublicScalaBasicsSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="[6] isPalindrome should return true if a string is a palindrome" />
       <setting name="testKind" value="Test name" />
       <setting name="showProgressMessages" value="true" />
       <classRegexps />
@@ -273,7 +294,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="PublicScalaBasicsSuite.[2] The inRange function should return an inclusive range" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration default="false" name="PublicScalaBasicsSuite.[7] wordCounter should return true if a map collects sum of instances for each unique word" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="week03" />
       <setting name="path" value="basics.PublicScalaBasicsSuite" />
@@ -282,41 +303,7 @@
       <setting name="params" value="" />
       <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
       <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="[2] The inRange function should return an inclusive range" />
-      <setting name="testKind" value="Test name" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="PublicScalaBasicsSuite.[4] The oddRange function should return a range of all odd integers from 1 to n" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="week03" />
-      <setting name="path" value="basics.PublicScalaBasicsSuite" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="[4] The oddRange function should return a range of all odd integers from 1 to n" />
-      <setting name="testKind" value="Test name" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="week03" />
-      <setting name="path" value="basics.PublicScalaBasicsSuite" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="[5] The minWhile function should return the minimum integer in an array using a while loop" />
+      <setting name="testName" value="[7] wordCounter should return true if a map collects sum of instances for each unique word" />
       <setting name="testKind" value="Test name" />
       <setting name="showProgressMessages" value="true" />
       <classRegexps />
@@ -777,19 +764,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[1] The add function should return the addition of a and b" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[2] The inRange function should return an inclusive range" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[4] The oddRange function should return a range of all odd integers from 1 to n" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" />
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[3] The base36 function should return the base 36 equivalent of the given BigInt" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[5] The splitInHalf function should split a string in half" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[7] wordCounter should return true if a map collects sum of instances for each unique word" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[7] wordCounter should return true if a map collects sum of instances for each unique word" />
         <item index="1" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[4] The oddRange function should return a range of all odd integers from 1 to n" />
-        <item index="3" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[2] The inRange function should return an inclusive range" />
-        <item index="4" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[1] The add function should return the addition of a and b" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[5] The splitInHalf function should split a string in half" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.PublicScalaBasicsSuite.[3] The base36 function should return the base 36 equivalent of the given BigInt" />
       </list>
     </recent_temporary>
   </component>
@@ -843,48 +830,56 @@
       <option name="presentableId" value="Default" />
       <updated>1485274773294</updated>
       <workItem from="1485274775329" duration="529000" />
-      <workItem from="1485275468912" duration="4936000" />
+      <workItem from="1485275468912" duration="33054000" />
     </task>
+    <task id="LOCAL-00001" summary="Finished minWhile">
+      <created>1485539497940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1485539497940</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PublicScalaBasicsSuite - 2017.01.24 at 16h 33m 41s.xml">
+    <history-entry file="PublicScalaBasicsSuite - 2017.01.29 at 14h 48m 24s.xml">
       <configuration name="PublicScalaBasicsSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite - 2017.01.27 at 17h 06m 07s.xml">
+    <history-entry file="PublicScalaBasicsSuite - 2017.01.29 at 15h 12m 55s.xml">
       <configuration name="PublicScalaBasicsSuite" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[1]_The_add_function_should_return_the_addition_of_a_and_b - 2017.01.24 at 16h 36m 48s.xml">
-      <configuration name="PublicScalaBasicsSuite.[1] The add function should return the addition of a and b" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 12h 14m 35s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[2]_The_inRange_function_should_return_an_inclusive_range - 2017.01.24 at 16h 54m 49s.xml">
-      <configuration name="PublicScalaBasicsSuite.[2] The inRange function should return an inclusive range" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 13h 24m 15s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[2]_The_inRange_function_should_return_an_inclusive_range - 2017.01.24 at 17h 01m 34s.xml">
-      <configuration name="PublicScalaBasicsSuite.[2] The inRange function should return an inclusive range" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 13h 26m 28s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[4]_The_oddRange_function_should_return_a_range_of_all_odd_integers_from_1_to_n - 2017.01.24 at 17h 02m 01s.xml">
-      <configuration name="PublicScalaBasicsSuite.[4] The oddRange function should return a range of all odd integers from 1 to n" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 13h 46m 19s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[5]_The_minWhile_function_should_return_the_minimum_integer_in_an_array_using_a_while_loop - 2017.01.27 at 17h 44m 27s.xml">
-      <configuration name="PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 13h 47m 18s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[5]_The_minWhile_function_should_return_the_minimum_integer_in_an_array_using_a_while_loop - 2017.01.27 at 17h 46m 54s.xml">
-      <configuration name="PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 14h 43m 29s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[5]_The_minWhile_function_should_return_the_minimum_integer_in_an_array_using_a_while_loop - 2017.01.27 at 17h 49m 04s.xml">
-      <configuration name="PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[6]_isPalindrome_should_return_true_if_a_string_is_a_palindrome - 2017.01.29 at 14h 45m 05s.xml">
+      <configuration name="PublicScalaBasicsSuite.[6] isPalindrome should return true if a string is a palindrome" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="PublicScalaBasicsSuite_[5]_The_minWhile_function_should_return_the_minimum_integer_in_an_array_using_a_while_loop - 2017.01.27 at 17h 50m 36s.xml">
-      <configuration name="PublicScalaBasicsSuite.[5] The minWhile function should return the minimum integer in an array using a while loop" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="PublicScalaBasicsSuite_[7]_wordCounter_should_return_true_if_a_map_collects_sum_of_instances_for_each_unique_word - 2017.01.29 at 16h 13m 26s.xml">
+      <configuration name="PublicScalaBasicsSuite.[7] wordCounter should return true if a map collects sum of instances for each unique word" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5465000" />
+    <option name="totallyTimeSpent" value="33583000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="23" width="1276" height="777" extended-state="0" />
-    <editor active="false" />
+    <frame x="-2" y="23" width="1276" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -903,15 +898,15 @@
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -970,6 +965,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished minWhile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished minWhile" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -981,16 +980,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/scala/basics/ScalaBasics.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="60" column="44" lean-forward="false" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+        <state relative-caret-position="333">
+          <caret line="212" column="0" lean-forward="true" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/basics/PublicScalaBasicsSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        <state relative-caret-position="318">
+          <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding />
         </state>
       </provider>

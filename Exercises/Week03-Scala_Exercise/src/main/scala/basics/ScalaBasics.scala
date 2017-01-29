@@ -55,9 +55,6 @@ object ScalaBasics {
     var storedInt  = r(0)
     var a = 1
     while ( a < r.length) {
-      println(s"StoredInt = ${storedInt}")
-      println(s"a = ${a}")
-      println(s"r(a) = ${r(a)}")
       if (storedInt > r(a)) storedInt = r(a)
       a += 1
     }
@@ -76,7 +73,13 @@ object ScalaBasics {
    * @param r the array of integers
    * @return the minimum integer in the array
    */
-  def minFor(r: Array[Int]): Int = ???
+  def minFor(r: Array[Int]): Int = {
+    var currentMin = r(0)
+    for (i <- 1 to r.length-1 if currentMin > r(i)) {
+      currentMin = r(i)
+    }
+    currentMin
+  }
 
   /**
    * Write a function called minRecursive that returns the minimum integer in the Array r.
@@ -92,7 +95,9 @@ object ScalaBasics {
    * @param r the array of integers
    * @return the minimum integer in the array
    */
-  def minRecursive(r: Array[Int]): Int = ???
+  def minRecursive(r: Array[Int]): Int = {
+    if ( r.min == r(0)) return r(0) else minRecursive(r.tail)
+  }
 
   /**
    * Return the base 36 equivalent of the BitInt b.
@@ -102,7 +107,8 @@ object ScalaBasics {
    * @param b a big integer
    * @return the base 36 equivalent
    */
-  def base36(b: BigInt): String = ???
+  def base36(b: BigInt): String = b.toString(36)
+
 
   /**
    * Splits the String s in half.
@@ -125,7 +131,7 @@ object ScalaBasics {
    * @param s the string to split
    * @return the split string as a tuple
    */
-  def splitInHalf(s: String): (String, String) = ???
+  def splitInHalf(s: String): (String, String) = s.splitAt(s.length/2)
 
   /**
    * Determines if the given string s is a palindrome.
@@ -148,7 +154,11 @@ object ScalaBasics {
    * @param s the potential palindrome
    * @return true if s is a palindrome; false otherwise
    */
-  def isPalindrome(s: String): Boolean = ???
+  def isPalindrome(s: String): Boolean = {
+    val normalizedS = s.replaceAll("\\W", "") // the '\\W' removes all non-words
+    val reversed = for (j <- normalizedS.reverse) yield j
+    return normalizedS.equalsIgnoreCase(reversed)
+  }
 
   /**
    * You don't have to complete this one as we've removed it from the list 
@@ -191,6 +201,12 @@ object ScalaBasics {
    * @param lines the lines of a text file
    * @return a map from words to the number of times that word was seen
    */
-  def wordCounter(lines: Array[String]): Map[String, Int] = ???
+  def wordCounter(lines: Array[String]): Map[String, Int] = {
+    val arrayOfSplitSentences = for (s <- lines) yield s.replaceAll("[,.'!-?]", "").split(" ") // splits in to array of arrays of individual words for each sntce
+    val arrayOfAllWords = arrayOfSplitSentences.flatten
+    arrayOfAllWords.distinct.map(s => ( s, arrayOfAllWords.count(_ == s)))(collection.breakOut)
+  }
 
 }
+
+// val stringArray = Array("What the holy Dickens?", "What the holy brazen Dickens Charles?")
