@@ -171,7 +171,6 @@ object ScalaBasics {
    * - You must use a for loop
    * - You may use any mutable (var) variables.
    *
-   * @param cc 0 or more characters
    * @return the sum of the ASCII integers corresponding with the character.
    */
   //def sumChars(cc: Char*): Int = ???
@@ -202,11 +201,9 @@ object ScalaBasics {
    * @return a map from words to the number of times that word was seen
    */
   def wordCounter(lines: Array[String]): Map[String, Int] = {
-    val arrayOfSplitSentences = for (s <- lines) yield s.replaceAll("[,.'!-?]", "").split(" ") // splits in to array of arrays of individual words for each sntce
+    val arrayOfSplitSentences = for (s <- lines) yield s.split(" ") // splits in to array of arrays of individual words for each sntce
     val arrayOfAllWords = arrayOfSplitSentences.flatten
     arrayOfAllWords.distinct.map(s => ( s, arrayOfAllWords.count(_ == s)))(collection.breakOut)
   }
 
 }
-
-// val stringArray = Array("What the holy Dickens?", "What the holy brazen Dickens Charles?")

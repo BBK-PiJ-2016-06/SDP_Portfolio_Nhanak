@@ -115,12 +115,12 @@ class PublicScalaBasicsSuite extends FunSuite {
   }
 
   test("[7] wordCounter should return true if a map collects sum of instances for each unique word") {
-    val stringArray1 = Array("What the holy Dickens?", "What the holy brazen Dickens Charles?")
-    val expectedMap1 = Map("holy" -> 2, "What" -> 2, "brazen" -> 1, "Dickens" -> 2, "Charles" -> 1, "the" -> 2)
+    val stringArray1 = Array("What the holy Dickens", "What the holy brazen Dickens Charles?")
+    val expectedMap1 = Map("holy" -> 2, "What" -> 2, "brazen" -> 1, "Dickens" -> 2, "Charles?" -> 1, "the" -> 2)
     val stringArray2 = Array("one", "one")
     val expectedMap2 = Map("one" -> 2)
-    val stringArray3 = Array("One one one t-wo two t'wo", "5 5 two one one One t-wo t'wo")
-    val expectedMap3 = Map("One" -> 2, "t-wo" -> 2, "two" -> 4, "5" -> 5, "555" -> 1, "one" -> 4)
+    val stringArray3 = Array("One 55 one one 5 two two two", "5 5 two one one One two two")
+    val expectedMap3 = Map("One" -> 2, "two" -> 6, "5" -> 3, "55" -> 1, "one" -> 4)
     assert(wordCounter(stringArray1) == expectedMap1)
     assert(wordCounter(stringArray2) == expectedMap2)
     assert(wordCounter(stringArray3) == expectedMap3)
