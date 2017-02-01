@@ -41,11 +41,52 @@ object NumberBehavior {
   }
 
 
-  // def isTriangular(n: Int): Boolean
-  // def isSquare(n: Int): Boolean
-  // def isSmug(n: Int): Boolean
-  // def isHonest(n: Int): Boolean
-  // def isPronic(n: Int): Boolean
+  def isTriangular(n: Int): Boolean = {
+    n match {
+      case n if n < 1 => false
+      case _ => evaluator(n, 1, (counter: Int) => counter + 1 )
+    }
+  }
+
+  def evaluator(j:Int, counter:Int, f1:(Int) => (Int)): Boolean = (j, counter) match {
+    case _ if j-counter == 0 => true
+    case _ if j-counter < 0 => false
+    case _ => evaluator(j-counter, f1(counter), f1)
+  }
+
+  def isSquare(n : Int): Boolean = {
+    n match {
+      case _ if n < 1 => throw new IllegalArgumentException ("Cannot be 0 or negative")
+      case _ => evaluator(n, 1, (counter:Int) => counter + 2)
+    }
+  }
+
+  def isSmug(n: Int): Boolean = {
+    var j = 1
+    while ( (n-(j*j)) > (j*j) ) {
+        j += 1
+    }
+    var l = j*j
+    var r = n - l
+    if (isSquare(l) && isSquare(r)) true else false
+  }
+
+  def isHonest(n: Int): Boolean = {
+    var k = 1
+    while (n/k != k || n/k > k) {
+      k += 1
+    }
+    if (n/k == k && k*k == n) true else false
+  }
+
+  def isPronic(n: Int): Boolean = {
+    var i = 1
+    while ( i*(i+1) < n  ) {
+      i += 1
+    }
+    if (n == (i*(i+1)) ) true else false
+  }
+
   // def isDeficient(n: Int): Boolean
   // def isPerfect(n: Int): Boolean
   // def isAbundant(n: Int): Boolean
