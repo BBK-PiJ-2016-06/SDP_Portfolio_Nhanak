@@ -9,13 +9,28 @@ object NumberBehavior {
 
   def main(args: Array[String]): Unit = {
     println("Enter a positive integer as a limit to get number behaviors")
-    var limit = scala.io.StdIn.readInt()
+    var limit : Int = scala.io.StdIn.readInt()
     while (limit < 0) {
       println("You entered a negative integer, please try again")
       limit = scala.io.StdIn.readInt()
     }
 
-    for
+    var result = ""
+    var i = 1
+    for ( i <- 1 to limit ) {
+      result = i.toString + "   "
+      if (isPrime(i)) result += "p, " else result += "c, "
+      if (isHappy(i)) result += "h, " else result += "u, "
+      if (isTriangular(i)) result += "t, "
+      if (isSquare(i)) result += "s, "
+      if (isSmug(i)) result += "sm, "
+      if (isHonest(i)) result += "ht, " else result += "dis, "
+      if (isPronic(i)) result +="pr, "
+      if (isDeficient(i)) result +="d, "
+      if (isPerfect(i)) result +="per" else result += "abun"
+      println(result)
+      println
+    }
   }
 
   def isPrime(n: Int): Boolean = {
@@ -67,8 +82,8 @@ object NumberBehavior {
 
   def isSquare(n : Int): Boolean = {
     n match {
-      case _ if n < 1 => throw new IllegalArgumentException ("Cannot be 0 or negative")
-      case _ => evaluator(n, 1, (counter:Int) => counter + 2)
+      case n if n < 1 => throw new IllegalArgumentException (s"Cannot be 0 or negative. You passed $n")
+      case n => evaluator(n, 1, (counter:Int) => counter + 2)
     }
   }
 

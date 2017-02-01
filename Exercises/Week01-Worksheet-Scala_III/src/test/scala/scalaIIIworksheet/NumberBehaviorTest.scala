@@ -26,6 +26,7 @@ class NumberBehaviorTest extends FunSuite {
   }
 
   test("isSquare returns true if a number is square") {
+    assert(isSquare(1) == true, ": isSquare(1) should return true")
     assert(isSquare(16) == true, ": isSquare(16) should return true")
     assert(isSquare(25) == true, ": isSquare(16) should return true")
     assert(isSquare(17) == false, ": isSquare(17) should return false")
