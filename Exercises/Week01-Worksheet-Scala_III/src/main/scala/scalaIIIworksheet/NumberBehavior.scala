@@ -7,6 +7,17 @@ import scala.collection.mutable.ArrayBuffer
   */
 object NumberBehavior {
 
+  def main(args: Array[String]): Unit = {
+    println("Enter a positive integer as a limit to get number behaviors")
+    var limit = scala.io.StdIn.readInt()
+    while (limit < 0) {
+      println("You entered a negative integer, please try again")
+      limit = scala.io.StdIn.readInt()
+    }
+
+    for
+  }
+
   def isPrime(n: Int): Boolean = {
     for (i <- 2 to n-1; if n%i == 0 ) {
     return false
@@ -87,8 +98,24 @@ object NumberBehavior {
     if (n == (i*(i+1)) ) true else false
   }
 
-  // def isDeficient(n: Int): Boolean
-  // def isPerfect(n: Int): Boolean
-  // def isAbundant(n: Int): Boolean
+  def isDeficient(n: Int): Boolean = {
+    sumOfPositiveDivisorsOf(n) < n
+  }
+
+  def isPerfect(n: Int): Boolean = {
+    sumOfPositiveDivisorsOf(n) == n
+  }
+
+  def isAbundant(n: Int): Boolean = {
+    sumOfPositiveDivisorsOf(n) > n
+  }
+
+  def sumOfPositiveDivisorsOf(n:Int): Int = {
+    var result = 0
+    for ( i <- 1 to n-1 if (n%i==0) ) {
+      result += i
+    }
+    result
+  }
 
 }

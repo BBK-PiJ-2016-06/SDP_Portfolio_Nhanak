@@ -53,6 +53,27 @@ class NumberBehaviorTest extends FunSuite {
     assert(isPronic(11) == false, ": isPronic(11) should return false")
   }
 
+  test("isDeficient returns true if the sum of a numbers even divisors is less than itself") {
+    assert(isDeficient(3) == true, ": isDeficient(3) should return true")
+    assert(isDeficient(7) == true, ": isDeficient(7) should return true")    
+    assert(isDeficient(24) == false, ": isDeficient(24) should return false")
+    assert(isDeficient(6) == false, ": isDeficient(6) should return false")
+  }
+
+  test("isPerfect returns true if the sum of a numbers even divisors is less than itself") {
+    assert(isPerfect(6) == true, ": isPerfect(6) should return true")
+    assert(isPerfect(24) == false, ": isPerfect(24) should return false")
+    assert(isPerfect(7) == false, ": isPerfect(7) should return false")
+    
+  }
+
+  test("isAbundant returns true if the sum of a numbers even divisors is less than itself") {
+    assert(isAbundant(12) == true, ": isAbundant(6) should return true")
+    assert(isAbundant(24) == true, ": isAbundant(24) should return true")
+    assert(isAbundant(7) == false, ": isAbundant(7) should return false")
+    assert(isAbundant(16) == false, ": isAbundant(7) should return false")
+
+  }
 
 
 
