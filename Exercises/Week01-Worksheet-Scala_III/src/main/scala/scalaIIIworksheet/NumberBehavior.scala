@@ -21,15 +21,15 @@ object NumberBehavior {
       result = i.toString + "   "
       if (isPrime(i)) result += "p, " else result += "c, "
       if (isHappy(i)) result += "h, " else result += "u, "
-      if (isTriangular(i)) result += "t, "
-      if (isSquare(i)) result += "s, "
-      if (isSmug(i)) result += "sm, "
+      if (isTriangular(i)) result += "t, " else result +="not t"
+      if (isSquare(i)) result += "s, " else result +="not s, "
+      if (isSmug(i)) result += "sm, " else result +="not sm, "
       if (isHonest(i)) result += "ht, " else result += "dis, "
-      if (isPronic(i)) result +="pr, "
+      if (isPronic(i)) result +="pr, " else result +="not pr, "
       if (isDeficient(i)) result +="d, "
-      if (isPerfect(i)) result +="per" else result += "abun"
+      if (isPerfect(i)) result +="per"
+      if (isAbundant(i)) result +="abun"
       println(result)
-      println
     }
   }
 
@@ -41,13 +41,12 @@ object NumberBehavior {
   }
 
   def isHappy(n: Int): Boolean = {
-    var k = n
-    isHappy(n: Int, k : Int)
+    isHappy(n: Int, n : Int)
   }
 
   def isHappy(original: Int, alteredN: Int): Boolean = {
     var newN = squareAndSumDigits(alteredN)
-    if (newN != original && newN != 1) isHappy(original, newN) else (newN == 1)
+    if (newN != 4 && newN != 1) isHappy(original, newN) else (newN == 1)
   }
 
   def squareAndSumDigits(n : Int): Int = {
@@ -82,24 +81,25 @@ object NumberBehavior {
 
   def isSquare(n : Int): Boolean = {
     n match {
-      case n if n < 1 => throw new IllegalArgumentException (s"Cannot be 0 or negative. You passed $n")
+      case n if n < 0 => false
       case n => evaluator(n, 1, (counter:Int) => counter + 2)
     }
   }
 
   def isSmug(n: Int): Boolean = {
-    var j = 1
-    while ( (n-(j*j)) > (j*j) ) {
-        j += 1
+    if (n < 2) return false
+    var l = 1
+    while ( (n-(l*l)) > (l*l) ) {
+      l += 1
     }
-    var l = j*j
-    var r = n - l
-    if (isSquare(l) && isSquare(r)) true else false
+    l = l*l
+    val r = n - l
+    if (isSquare(r)) true else false
   }
 
   def isHonest(n: Int): Boolean = {
     var k = 1
-    while (n/k != k || n/k > k) {
+    while (n/k != k && n/k > k ) {
       k += 1
     }
     if (n/k == k && k*k == n) true else false

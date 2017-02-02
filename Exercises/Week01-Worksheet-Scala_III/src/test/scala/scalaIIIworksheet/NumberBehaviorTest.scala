@@ -18,6 +18,8 @@ class NumberBehaviorTest extends FunSuite {
   test("isHappy returns true if Number is true, false if not") {
     assert(isHappy(19) == true, "19 is Happy")
     assert(isHappy(4) == false, "4 is not Happy")
+    assert(isHappy(2) == false, "2 is not Happy")
+    assert(isHappy(3) == false)
   }
 
   test("isTriangular returns true if Number if triangular, false if not") {
@@ -33,18 +35,22 @@ class NumberBehaviorTest extends FunSuite {
     assert(isSquare(999) == false, ": isSquare(999) should return false")
   }
 
-  test("isSmug returns true if a number is smug") {
+  test("isSmug returns true if a number is the sum of two square numbers") {
+    for (i <- 1 to 100) println(s"Running isSmug($i) result: ${isSmug(i)}")
     assert(isSmug(5) == true, ": isSmug(5) should return true")
     assert(isSmug(10) == true, ": isSmug(10) should return true")
     assert(isSmug(13) == true, ": isSmug(5) should return true")
+    assert(isSmug(2) == true, ": isSmug(2) should return true")
     assert(isSmug(6) == false, ": isSmug(6) should return false")
     assert(isSmug(12) == false, ": isSmug(12) should return false")
+    assert(isSmug(1) == false, ": isSmug(1) should return false")
   }
 
   test("isHonest returns true if a number/k = k AND k*k = n"){
     assert(isHonest(16) == true, ": is Honest(16) should return true")
     assert(isHonest(9) == true, ": is Honest(9) should return true")
     assert(isHonest(5) == false, ": is Honest(5) should return false")
+    assert(isHonest(2) == false, ": is Honest(2) should return false")
   }
 
   test("isPronic returns true if a number can be the product of two consecutive numbers") {
