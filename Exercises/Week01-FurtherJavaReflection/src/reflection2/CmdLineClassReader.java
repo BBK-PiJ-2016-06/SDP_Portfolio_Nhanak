@@ -6,6 +6,7 @@ import reflection2.DummyInterface;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
 
 /**
  * Created by nathanhanak on 2/3/17.
@@ -17,6 +18,7 @@ public class CmdLineClassReader {
     private String className;
     private String topLine = "public ";
     private String memberFields = "    ";
+    private String constructors = "    ";
 
     public static void main(String[] args) {
         CmdLineClassReader runner = new CmdLineClassReader();
@@ -36,6 +38,7 @@ public class CmdLineClassReader {
 
         constructClassDeclaration();
         constructMemberfields();
+        constructConstructors();
 
         printResults();
     }
@@ -44,6 +47,7 @@ public class CmdLineClassReader {
         System.out.println(packageName + ";" + "\n");
         System.out.println(topLine + "\n");
         System.out.println(memberFields + "\n");
+        System.out.println(constructors);
     }
 
     private void constructClassDeclaration(){
@@ -91,16 +95,28 @@ public class CmdLineClassReader {
             memberFields += Modifier.toString(f.getModifiers()) + " ";
             memberFields += f.getType().getSimpleName() + " ";
             memberFields += f.getName();
-            memberFields += getFieldValue(f);
             memberFields += "; \n    " ;
         }
-
     }
 
-    private String getFieldValue(Field f) {
-        Constructor[] clsContructors = cls.getConstructors();
-
+    private void constructConstructors(){
+        Constructor[] clsConstructors = cls.getDeclaredConstructors();
+        for (Constructor c: clsConstructors) {
+            c.setAccessible(true);
+            constructors += Modifier.toString(c.getModifiers()) + " ";
+            String constructorName = c.getName();
+            constructors += constructorName.substring(constructorName.lastIndexOf(".") + 1) + "(";
+            Parameter[] constructorParams = c.getParameters();
+            if (constructorParams.length != 0) {
+                for (Parameter p : constructorParams ) {
+                    constructors += p.getType().getSimpleName() + " ";
+                    constructors += p.getName();
+                }
+            }
+            constructors += ") ; \n";
+        }
     }
+
 
 
 }
