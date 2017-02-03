@@ -1,12 +1,6 @@
 package reflection2;
 
-import reflection2.DummyInterfaceImpl;
-import reflection2.DummyInterface;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.Parameter;
+import java.lang.reflect.*;
 
 /**
  * Created by nathanhanak on 2/3/17.
@@ -19,13 +13,14 @@ public class CmdLineClassReader {
     private String topLine = "public ";
     private String memberFields = "    ";
     private String constructors = "    ";
+    private String methods =  "    ";
 
     public static void main(String[] args) {
         CmdLineClassReader runner = new CmdLineClassReader();
         runner.run(args[0]);
     }
 
-    public void run(String arg){
+    private void run(String arg){
 
         try {
             this.cls = Class.forName(arg);
@@ -39,6 +34,7 @@ public class CmdLineClassReader {
         constructClassDeclaration();
         constructMemberfields();
         constructConstructors();
+        constructMethods();
 
         printResults();
     }
@@ -48,6 +44,8 @@ public class CmdLineClassReader {
         System.out.println(topLine + "\n");
         System.out.println(memberFields + "\n");
         System.out.println(constructors);
+        System.out.println(methods);
+        System.out.println("}");
     }
 
     private void constructClassDeclaration(){
@@ -107,14 +105,38 @@ public class CmdLineClassReader {
             String constructorName = c.getName();
             constructors += constructorName.substring(constructorName.lastIndexOf(".") + 1) + "(";
             Parameter[] constructorParams = c.getParameters();
-            if (constructorParams.length != 0) {
-                for (Parameter p : constructorParams ) {
-                    constructors += p.getType().getSimpleName() + " ";
-                    constructors += p.getName();
+            constructors += returnMethodParameters(constructorParams);
+            constructors += ") ; \n    ";
+        }
+    }
+
+    private void constructMethods(){
+        Method[] clsMethods = cls.getDeclaredMethods();
+        for (Method m : clsMethods) {
+            m.setAccessible(true);
+            methods += Modifier.toString(m.getModifiers()) + " ";
+            methods += m.getReturnType().getSimpleName() + " ";
+            methods += m.getName() + "(";
+            Parameter[] methodParams = m.getParameters();
+            methods += returnMethodParameters(methodParams);
+            methods += "); \n    ";
+        }
+    }
+
+    private String returnMethodParameters(Parameter[] params) {
+        String result = "";
+        int counter = params.length;
+        if (params.length != 0) {
+            for (Parameter p : params) {
+                    result += p.getType().getSimpleName() + " ";
+                    result += p.getName();
+                    if (counter != 1) {
+                        result += ", ";
+                    }
+                    counter--;
                 }
             }
-            constructors += ") ; \n";
-        }
+        return result;
     }
 
 
