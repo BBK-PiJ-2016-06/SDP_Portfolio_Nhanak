@@ -1,9 +1,8 @@
 package reflection2;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Parameter;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by nathanhanak on 2/4/17.
@@ -40,11 +39,27 @@ public class ClassThenConstructorArgsReader {
             e.printStackTrace();
         }
 
+        String[] clsParamsAsString = new String[clsParams.length];
+        for (int i = 0; i < clsParamsAsString.length; i++) {
+             clsParamsAsString[i] = clsParams[i].getSimpleName()+".class";
+        }
+
+        try {
+            Object o = clsConstructor.newInstance(clsParamsAsString);
+            System.out.println("Object I got is: " + o);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void buildClsParams(String[] args) {
         clsParams = new Class[args.length-1];
-        for(int i = 0; i < args.length; i ++) {
+        for(int i = 0; i < args.length-1; i ++) {
             try {
                 clsParams[i] = Class.forName(args[i+1]);
             } catch (ClassNotFoundException e) {
@@ -52,6 +67,8 @@ public class ClassThenConstructorArgsReader {
             }
         }
     }
+
+
 
 
 

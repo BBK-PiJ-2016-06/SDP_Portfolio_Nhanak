@@ -13,9 +13,9 @@ public class DummyInterfaceImpl implements DummyInterface {
         this.privStringField = s;
     }
 
-    public DummyInterfaceImpl(String s, Double d) {
+    public DummyInterfaceImpl(String s, String s2) {
         privStringField = s;
-        pubDoub = d;
+        privStringField += s2;
     }
 
     @Override
