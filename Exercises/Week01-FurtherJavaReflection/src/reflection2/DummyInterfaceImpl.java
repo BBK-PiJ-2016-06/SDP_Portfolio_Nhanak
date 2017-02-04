@@ -13,6 +13,11 @@ public class DummyInterfaceImpl implements DummyInterface {
         this.privStringField = s;
     }
 
+    public DummyInterfaceImpl(String s, Double d) {
+        privStringField = s;
+        pubDoub = d;
+    }
+
     @Override
     public String getPrivateStringField() {
         return this.privStringField;

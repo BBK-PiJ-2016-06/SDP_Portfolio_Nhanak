@@ -4,6 +4,8 @@ import java.lang.reflect.*;
 
 /**
  * Created by nathanhanak on 2/3/17.
+ *
+ * Class which satisfies Question number 1 for Further Java Reflection
  */
 public class CmdLineClassReader {
 
