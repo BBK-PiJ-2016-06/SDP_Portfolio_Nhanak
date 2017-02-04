@@ -39,7 +39,11 @@ public class ClassThenConstructorArgsReader {
             e.printStackTrace();
         }
 
-        String[] clsParamsAsString = new String[clsParams.length];
+        //this last part actually not necessary as is. Works because it creates
+        //an array of 2 String objects, which is what the method requires
+        //only works this way with Strings, otherwise you have to know what the param types are
+        //for the method you're trying to instantiate
+        Object[] clsParamsAsString = new String[clsParams.length];
         for (int i = 0; i < clsParamsAsString.length; i++) {
              clsParamsAsString[i] = clsParams[i].getSimpleName()+".class";
         }

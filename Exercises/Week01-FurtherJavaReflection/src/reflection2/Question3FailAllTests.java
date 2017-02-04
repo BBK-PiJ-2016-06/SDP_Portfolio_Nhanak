@@ -40,6 +40,16 @@ public class Question3FailAllTests {
 
     private void helperMethod() {
         i += 3;
+        helperMethod2();
+    }
+
+    private void helperMethod2() {
+        d += 5.5;
+        helperMethod3();
+    }
+
+    private void helperMethod3() {
+        s2 += " wow";
     }
 
 }

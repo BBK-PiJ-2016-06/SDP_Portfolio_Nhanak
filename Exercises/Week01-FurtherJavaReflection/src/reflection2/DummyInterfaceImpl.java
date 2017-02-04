@@ -24,7 +24,7 @@ public class DummyInterfaceImpl implements DummyInterface {
     }
 
     @Override
-    public int getPrivateIntField() {
+    public int getPrivateIntField() throws IllegalAccessError {
         return this.privIntField;
     }
 
