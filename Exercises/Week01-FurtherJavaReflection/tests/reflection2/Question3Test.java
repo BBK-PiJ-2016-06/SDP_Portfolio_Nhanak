@@ -36,6 +36,7 @@ public class Question3Test {
     //Change the content of Class.forName() accordingly to test desired class
     public void setUp() throws Exception {
         cls = Class.forName("reflection2.Question3PassesAllTests");
+        // cls = Class.forName("reflection2.Question3FailsAllTests");
         fields = cls.getDeclaredFields();
         methods = cls.getDeclaredMethods();
     }
