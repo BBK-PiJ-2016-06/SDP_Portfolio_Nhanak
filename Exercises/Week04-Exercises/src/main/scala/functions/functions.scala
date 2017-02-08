@@ -62,7 +62,7 @@ object Funcs {
 
   // LIST FOLDING
 
-  /*
+  /**
    * foldLeft reduces a list down to a single value by iteratively applying a
    * function over the elements of the list and carrying the cumulative result
    * along.
@@ -73,7 +73,13 @@ object Funcs {
    * list and the cumulative value.
    * @return the final valued.
    */
-  def foldLeft[A,B](ls: List[A], z: B)(f: (B, A) => B): B = ???
+  def foldLeft[A,B](ls: List[A], z: B)(f: (B, A) => B): B = {
+    ls match {
+      case Nil => z
+      case h :: t if ls.size == 1 => f(z, h)
+      case h::t if (ls.size > 1) => foldLeft(t, f(z,h))(f)
+    }
+  }
 
   /**
     * Use your implementation of foldLeft to implement these functions:
@@ -87,11 +93,15 @@ object Funcs {
     * the sublists into one long list. For example, flatten(List(List(1,2,3),
     * List(4,5,6))) produces List(1,2,3,4,5,6).
     */
-  def sum(ls: List[Double]): Double = ???
-  def product(ls: List[Double]): Double = ???
-  def length[A](ls: List[A]): Int = ???
-  def reverse[A](ls: List[A]): List[A] = ???
-  def flatten[A](ls: List[List[A]]): List[A] = ???
+  def sum(ls: List[Double]): Double = foldLeft(ls, 0.0)(_+_)
+
+  def product(ls: List[Double]): Double = foldLeft(ls, 1.0)(_*_)
+
+  def length[A](ls: List[A]): Int = foldLeft(ls, 0)( (z , _) => (z + 1) )
+
+  def reverse[A](ls: List[A]): List[A] = foldLeft(ls, List[A]() )( (z, a) => a :: z)
+
+  def flatten[A](ls: List[List[A]]): List[A] = foldLeft(ls, List[A]())( (z, a) =>  )
 
   // MAP AND FILTER
 
