@@ -101,7 +101,7 @@ object Funcs {
 
   def reverse[A](ls: List[A]): List[A] = foldLeft(ls, List[A]() )( (z, a) => a :: z)
 
-  def flatten[A](ls: List[List[A]]): List[A] = foldLeft(ls, List[A]())( (z, a) =>  )
+  def flatten[A](ls: List[List[A]]): List[A] = foldLeft(ls, List[A]())( (z, a) => z ::: a )
 
   // MAP AND FILTER
 
@@ -113,7 +113,12 @@ object Funcs {
     * @param f: A => B the function to be applied to each element of the input.
     * @return the resulting list from applying f to each element of ls.
     */
-  def map[A,B](ls: List[A])(f: A => B): List[B] = ???
+  def map[A,B](ls: List[A])(f: A => B): List[B] = {
+    ls match {
+      case Nil => Nil
+      case h::t => f(h) :: map(t)(f)
+    }
+  }
 
   /**
     * filter removes all elements from a list for which a given predicate
@@ -123,7 +128,13 @@ object Funcs {
     * @param f: A => Boolean the predicate
     * @return the filtered list.
     */
-  def filter[A](ls: List[A])(f: A => Boolean): List[A] = ???
+  def filter[A](ls: List[A])(f: A => Boolean): List[A] = {
+    ls match {
+      case Nil => Nil
+      case h::t if f(h) => h :: filter(t)(f)
+      case h::t if !f(h) => filter(t)(f)
+    }
+  }
 
   /**
     * flatMap is very similar to map. However, the function returns a List,
@@ -133,7 +144,12 @@ object Funcs {
     * @return a List[B] containing the flattened results of applying f to all
     * elements of ls.
     */
-  def flatMap[A,B](ls: List[A])(f: A => List[B]): List[B] = ???
+  def flatMap[A,B](ls: List[A])(f: A => List[B]): List[B] = {
+    ls match {
+      case Nil => Nil
+      case h::t => f(h) ::: flatMap(t)(f)
+    }
+  }
 
   // COMBINING FUNCTIONS
 
