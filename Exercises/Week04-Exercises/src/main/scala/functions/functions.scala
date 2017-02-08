@@ -178,5 +178,10 @@ object Funcs {
     * @param ls: List[Double] a list of values, whose length is greater than 0.
     * @param List[Double] the variance of the input.
     */
-  def variance(ls: List[Double]): Double = ???
+  def variance(ls: List[Double]): Double = {
+    val mean = foldLeft(ls, 0.0)(_+_)/ls.size
+    val distSq = map(ls)(x => (x-mean)*x)
+    foldLeft(distSq, 0.0)(_+_)/ls.size
+  }
+
 }
