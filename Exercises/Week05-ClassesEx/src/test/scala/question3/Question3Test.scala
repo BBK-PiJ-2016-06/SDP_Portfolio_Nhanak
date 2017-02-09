@@ -18,12 +18,21 @@ class Question3Test extends FunSuite {
     assert(f.directorsAge() == 42)
   }
 
-  test("Calling isDirectedBy takes a director for a parameter and returns true or false, accordingly")
-  val qt = new Director("Quentin", "Tarantino", 1963)
-  val kb = new Film("Kill Bill: Part I", 2003, 8.1, qt)
-  val ss = new Director("Steven", "Soderbergh", 1963)
-  val oo = new Film("Ocean's Eleven", 2001, 7.8, ss)
-  assert(kb.isDirectedBy(qt) == true)
-  assert(oo.isDirectedBy(qt) == false)
+  test("Calling isDirectedBy takes a director for a parameter and returns true or false, accordingly") {
+    val qt = new Director("Quentin", "Tarantino", 1963)
+    val kb = new Film("Kill Bill: Part I", 2003, 8.1, qt)
+    val ss = new Director("Steven", "Soderbergh", 1963)
+    val oo = new Film("Ocean's Eleven", 2001, 7.8, ss)
+    assert(kb.isDirectedBy(qt) == true)
+    assert(oo.isDirectedBy(qt) == false)
+  }
+
+  test("Calling copy with changes in the parameter returns movie with only that field altered"){
+    val tg = new Film("True Grit", 2010, 7.7, new Director("Ethan and Joel", "Coen", 1957))
+    val tgOrig = tg.copy(yearOfRelease = 1969, director = new Director("Henry", "Hathaway", 1898))
+    assert(tgOrig.yearOfRelease == 1969)
+    assert(tgOrig.imdbRating == 7.7)
+    assert(tgOrig.directorsAge == 71)
+  }
 
 }
