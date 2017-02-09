@@ -37,4 +37,19 @@ class Question3Test extends FunSuite {
     assert(tgOrig.directorsAge == 71)
   }
 
+  test("Calling apply of a companion object of director returns a director with expected fields") {
+    val d = Director.apply("Hayao", "Miyazaki", 1941)
+    assert(d.firstName.equals("Hayao"))
+    assert(d.surName.equals("Miyazaki"))
+    assert(d.yob == 1941)
+  }
+
+  test("Calling older of Director companion object returns the older of the two directors") {
+    val young = Director.apply("George", "Lucas", 1944)
+    val old = Director.apply("Martin", "Scorcese", 1942)
+    assert(Director.older(young, old).equals(old))
+  }
+
+
+
 }
