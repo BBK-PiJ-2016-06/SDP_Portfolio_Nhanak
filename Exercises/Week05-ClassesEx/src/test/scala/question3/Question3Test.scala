@@ -29,7 +29,9 @@ class Question3Test extends FunSuite {
 
   test("Calling copy with changes in the parameter returns movie with only that field altered"){
     val tg = new Film("True Grit", 2010, 7.7, new Director("Ethan and Joel", "Coen", 1957))
-    val tgOrig = tg.copy(yearOfRelease = 1969, director = new Director("Henry", "Hathaway", 1898))
+    val what = tg.copy()
+    val tgOrig = tg.copy(newYear = 1969, newDirec = new Director("Henry", "Hathaway", 1898))
+    //needed to specify names of params because calling out of order from copy()'s original signature
     assert(tgOrig.yearOfRelease == 1969)
     assert(tgOrig.imdbRating == 7.7)
     assert(tgOrig.directorsAge == 71)
