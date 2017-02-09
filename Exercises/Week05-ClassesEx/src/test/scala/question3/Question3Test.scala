@@ -47,7 +47,8 @@ class Question3Test extends FunSuite {
   test("Calling older of Director companion object returns the older of the two directors") {
     val young = Director.apply("George", "Lucas", 1944)
     val old = Director.apply("Martin", "Scorcese", 1942)
-    assert(Director.older(young, old).equals(old))
+    val result = Director.older(young, old)
+    assert(result.firstName.equals("Martin"), s"Martin is older, you returned ${result.firstName}")
   }
 
 
