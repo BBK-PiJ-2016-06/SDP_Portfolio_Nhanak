@@ -49,8 +49,15 @@ class Question3Test extends FunSuite {
     val old = Director.apply("Martin", "Scorcese", 1942)
     val result = Director.older(young, old)
     assert(result.firstName.equals("Martin"), s"Martin is older, you returned ${result.firstName}")
+    val result2 = Director.older(old, young)
+    assert(result2.firstName.equals("Martin"), s"Martin is older, you returned ${result2.firstName}")
   }
 
+  test("Calling highest rating returns the higher rated of the two films") {
+    val sa = new Film("Spirited Away", 2001, 8.6, new Director("Hayao", "Miyazaki", 1941))
+    val i = new Film("Inception", 2010, 8.8, new Director("Christopher", "Nolan", 1970))
+    assert(Film.highestRating(sa, i).equals(i))
+  }
 
 
 }
