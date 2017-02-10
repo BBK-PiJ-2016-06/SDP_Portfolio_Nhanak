@@ -23,8 +23,8 @@ class Question3Test extends FunSuite {
     val kb = new Film("Kill Bill: Part I", 2003, 8.1, qt)
     val ss = new Director("Steven", "Soderbergh", 1963)
     val oo = new Film("Ocean's Eleven", 2001, 7.8, ss)
-    assert(kb.isDirectedBy(qt) == true)
-    assert(oo.isDirectedBy(qt) == false)
+    assert(kb.isDirectedBy(qt))
+    assert(!oo.isDirectedBy(qt))
   }
 
   test("Calling copy with changes in the parameter returns movie with only that field altered"){
@@ -58,6 +58,27 @@ class Question3Test extends FunSuite {
     val i = new Film("Inception", 2010, 8.8, new Director("Christopher", "Nolan", 1970))
     assert(Film.highestRating(sa, i).equals(i))
   }
+
+  test("Calling oldestDirectorAtTheTime returns the director who was oldest at the time of making the film") {
+    val sa = new Film("Spirited Away", 2001, 8.6, new Director("Hayao", "Miyazaki", 1941))
+    val i = new Film("Inception", 2010, 8.8, new Director("Christopher", "Nolan", 1970))
+    assert(Film.oldestDirectorAtTheTime(sa, i).firstName.equals("Hayao"))
+  }
+
+  test("Calling copy on FilmAsCase allows for same usage as copy method for non-case class") {
+    val sa = FilmAsCase("Spirited Away", 2001, 8.6, new Director("Hayao", "Miyazaki", 1941))
+    val saAlt = sa.copy("Different Movie", imdbRating = 9.5)
+    assert(saAlt.name.equals("Different Movie"))
+    assert(saAlt.imdbRating.equals(9.5))
+    assert(saAlt.director.firstName.equals("Hayao"))
+  }
+
+  test("Calling copy on DirectorAsCase allows for same usage as copy method for non-case class") {
+    val d1 = DirectorAsCase("George", "Lucas", 1944)
+    val d2 = d1.copy("Martin", "Scorcese", 1942)
+    assert(d2.firstName.equals("Martin"))
+  }
+
 
 
 }
