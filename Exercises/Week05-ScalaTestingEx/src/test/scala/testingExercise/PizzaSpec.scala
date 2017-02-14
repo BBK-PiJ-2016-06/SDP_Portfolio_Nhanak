@@ -6,7 +6,6 @@ import org.scalatest.BeforeAndAfter
 /**
   * Created by nathanhanak on 2/10/17.
   */
-
 class PizzaSpec extends FunSpec with BeforeAndAfter {
 
   var pizza: Pizza = _
@@ -27,7 +26,9 @@ class PizzaSpec extends FunSpec with BeforeAndAfter {
       assert(pizza.getToppings.size == 2)
     }
 
-    it("should allow removal of toppings") (pending)
+    ignore("should allow removal of toppings") (pending)
   }
+
+
 
 }
