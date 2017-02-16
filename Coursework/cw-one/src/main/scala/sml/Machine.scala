@@ -35,7 +35,7 @@ object Machine {
     } else {
       println("SML interpreter - Scala version")
 
-      val m = Translator(args(0)).readAndTranslate(new Machine(Labels(), Vector()))
+      val m = Translator(args(0)).readAndTranslate(new Machine(Labels(), Vector())) // readsAndTranslates a blank machine
 
       println("Here is the program; it has " + m.prog.size + " instructions.")
       println(m)
@@ -47,3 +47,4 @@ object Machine {
     }
   }
 }
+
