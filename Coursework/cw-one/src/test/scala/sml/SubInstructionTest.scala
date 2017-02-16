@@ -23,7 +23,7 @@ class SubInstructionTest extends FunSpec with GivenWhenThen {
       subInst = new SubInstruction(label, opCode, resultRegister, 6, 2)
 
       When( "calling toString()")
-      assert(subInst.toString().equals(s"$label: $opCode will store result of op1:6 - op2:2 in result register:$resultRegister"))
+      assert(subInst.toString().equals(s"$label: $opCode 6 - 2 to $resultRegister" + "\n"))
 
     }
 
@@ -41,7 +41,7 @@ class SubInstructionTest extends FunSpec with GivenWhenThen {
       val sI : SubInstruction = SubInstruction.apply(label, resultRegister, 4, 5)
 
       When("calling toString(), it prints as expected.")
-      assert(sI.toString().equals(s"$label: $opCode will store result of op1:4 - op2:5 in result register:$resultRegister"))
+      assert(sI.toString().equals(s"$label: $opCode 4 - 5 to $resultRegister" + "\n"))
 
       Then("calling execute(Machine) from that object will store the result in the machine as expected")
         sI.execute(m)
@@ -55,7 +55,7 @@ class SubInstructionTest extends FunSpec with GivenWhenThen {
 
 
       When("calling execute with out of bounds fields, it throws IndexOutOfBoundsExceptions")
-        for (i <- 0 until subInstArray.length)
+        for (i <- subInstArray.indices)
         intercept[IndexOutOfBoundsException] {
             subInstArray(i).execute(m)
         }
