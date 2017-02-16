@@ -27,7 +27,7 @@ class SubInstructionTest extends FunSpec with GivenWhenThen {
 
     }
 
-    it("should store the result of the opertion in the given machine") {
+    it("should store the result of the operation in the given machine") {
       Given("A new SubInstruction")
       subInst = new SubInstruction(label, opCode, resultRegister, 4, 5)
 
@@ -41,11 +41,24 @@ class SubInstructionTest extends FunSpec with GivenWhenThen {
       val sI : SubInstruction = SubInstruction.apply(label, resultRegister, 4, 5)
 
       When("calling toString(), it prints as expected.")
-      assert(sI.toString().equals(s"$label: $opCode will store result of op1:6 - op2:2 in result register:$resultRegister"))
+      assert(sI.toString().equals(s"$label: $opCode will store result of op1:4 - op2:5 in result register:$resultRegister"))
 
       Then("calling execute(Machine) from that object will store the result in the machine as expected")
         sI.execute(m)
         assert(m.regs(resultRegister) == 6)
+    }
+
+    it("should throw an exception if the result, op1, or op2 are out of the bounds of the machine's regs") {
+      Given("an array of SubInstructions with a negative or overly large results, op1 or op2's")
+      val subInstArray: Array[SubInstruction] = Array(SubInstruction.apply(label, -3, 4, 5), SubInstruction.apply(label, 33, 4, 5),
+        SubInstruction.apply(label, 3, 44, 5), SubInstruction.apply(label, 3, 4, -5), SubInstruction.apply(label, 3, 4, 55) )
+
+
+      When("calling execute with out of bounds fields, it throws IndexOutOfBoundsExceptions")
+        for (i <- 0 until subInstArray.length)
+        intercept[IndexOutOfBoundsException] {
+            subInstArray(i).execute(m)
+        }
     }
 
 

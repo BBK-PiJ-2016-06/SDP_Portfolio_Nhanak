@@ -10,7 +10,6 @@ class SubInstruction(label: String, op: String, val result: Int, val op1: Int, v
     val value1 = m.regs(op1)
     val value2 = m.regs(op2)
     m.regs(result) = value1 - value2
-    println(s"in the register $result it stored " + m.regs(result)  )
   }
 
   override def toString(): String = {
