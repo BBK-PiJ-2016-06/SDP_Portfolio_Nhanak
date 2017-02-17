@@ -6,7 +6,7 @@ package sml
 class OutInstruction(label:String, op:String, val regToPrint:Int) extends Instruction(label, op) {
 
   //fetches the value of the indicated register and prints it to console
-  override def execute(m: Machine) = print(m.regs(regToPrint) + " ")
+  override def execute(m: Machine) = println(m.regs(regToPrint) + " ")
 
   override def toString(): String = {
     super.toString + " " + s"prints register: $regToPrint" +  "\n"

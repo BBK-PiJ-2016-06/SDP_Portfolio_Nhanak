@@ -26,7 +26,7 @@ class BnzInstructionTest extends FunSpec with GivenWhenThen with BeforeAndAfter 
 
   describe("A BnzInstruction") {
 
-    it("Should tell a machine to jump and re-execute its instructions from the desired destination label if the checked register !=0") {
+    it("Should tell a machine to re-execute its instructions from desired destination label if the checked register !=0") {
       Given("A machine using a BnzInstruction with a SubInstruction, decrementing register 1 by 1 until 0")
       val prog = insts :+ LinInstruction("I1", 1, 3) :+ LinInstruction("I2", 2, 1) :+
         SubInstruction(destinationLabel, 1, 1, 2) :+ BnzInstruction(bnzLabel, 1, destinationLabel)
