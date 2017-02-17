@@ -11,7 +11,6 @@ class BnzInstruction(label:String, op:String, register:Int, toLabel:String) exte
     }
   }
 
-
   override def toString(): String =
     super.toString() + s" if reg: $register != 0 jump to $toLabel" + "\n"
 
