@@ -5,7 +5,11 @@ package sml
   */
 class BnzInstruction(label:String, op:String, register:Int, toLabel:String) extends Instruction(label, op) {
 
-  override def execute(m: Machine) = ???
+  override def execute(m: Machine):Unit = {
+    if (m.regs(register) != 0) {
+      m.pc = m.labels.labels.indexWhere( p => p.equals(toLabel), 0)
+    }
+  }
 
 
   override def toString(): String =

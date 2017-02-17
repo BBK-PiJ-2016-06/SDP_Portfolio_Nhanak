@@ -18,6 +18,8 @@ class BnzInstructionTest extends FunSpec with GivenWhenThen with BeforeAndAfter 
 
   before {
     labels = Labels()
+    labels.add("In1")
+    labels.add("In2")
     labels.add(destinationLabel)
     labels.add(bnzLabel)
   }
@@ -27,14 +29,13 @@ class BnzInstructionTest extends FunSpec with GivenWhenThen with BeforeAndAfter 
     it("Should tell a machine to jump and re-execute its instructions from the desired destination label if the checked register !=0") {
       Given("A machine using a BnzInstruction with a SubInstruction, decrementing register 1 by 1 until 0")
       val prog = insts :+ LinInstruction("I1", 1, 3) :+ LinInstruction("I2", 2, 1) :+
-        SubInstruction(destinationLabel, 1, 1, 2) :+ BnzInstruction(bnzLabel, 1, "In1")
+        SubInstruction(destinationLabel, 1, 1, 2) :+ BnzInstruction(bnzLabel, 1, destinationLabel)
       val m2 = new Machine(labels, prog)
 
       When("calling execute")
       m2.execute()
-
       Then("the expected register should have decremented to 0 upon completion")
-      assert(m.regs(1) == 0)
+      assert(m2.regs(1) == 0)
     }
 
     it("Should print out its fields") {
