@@ -23,6 +23,7 @@ case class Machine(labels: Labels, prog: Vector[Instruction]) {
       val ins = prog(pc)
       pc += 1
       ins execute this
+
     }
   }
 //  start.until(prog.length).foreach(x => prog(x) execute this)
