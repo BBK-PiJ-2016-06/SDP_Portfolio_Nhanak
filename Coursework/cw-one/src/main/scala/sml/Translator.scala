@@ -24,8 +24,8 @@ class Translator(fileName: String) {
       val fields = line.split(" ")
       if (fields.length > 0) {
         labels.add(fields(0))
-        val instFac = new SMLInstructionFactory(fields)
-        program = program :+ instFac.makeInstruction()
+        val instFac = new SMLInstructionFactory()
+        program = program :+ instFac.makeInstruction(fields)
         /*
         fields(1) match {
           case ADD =>
