@@ -8,24 +8,23 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class SMLInstructionFactory {
 
+    /**
+     * Method dissects a line from an SML program as a String
+     * Interprets what type of Instruction class to build and instantiates and that Instruction's
+     * parameters. The invokes instructor to create and return an Instruction class
+     * @param fields a single line as a String[] from an SML file
+     * @return Instruction object reflecting the type of instruction and parameters indicated in SML file
+     */
     public Instruction makeInstruction(String[] fields) {
         Instruction result = null;
         try {
             Class instructionClass = Class.forName(generateClassName(fields[1]));
             Constructor[] constructor = instructionClass.getConstructors();
-            System.out.println("how many constructors? " + constructor.length);
-            System.out.println("how many params does that constructor have?" + constructor[0].getParameterCount());
-            System.out.println("and they are: ");
-            Class[] cParams = constructor[0].getParameterTypes();
-            for (Class c : cParams) {
-                System.out.println(c.getSimpleName());
-            }
             Object[] args = generateConstructorArgs(fields, constructor[0].getParameterTypes());
             result = (Instruction) constructor[0].newInstance(args);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (IllegalAccessException e) {
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -35,6 +34,12 @@ public class SMLInstructionFactory {
         return result;
     }
 
+    /**
+     * The "word" at fields[1] is the prefix for the name of the class we are trying to be build
+     * This method extracts it and concatenates it with other Strings to build a fully qualified class name
+     * @param prefix The String prefix of the type of Instruction we are trying to build
+     * @return a fully qualified class name of the instruction we are trying to build
+     */
     private String generateClassName(String prefix) {
         return ("sml." + prefix.substring(0, 1).toUpperCase() + prefix.substring(1).toLowerCase() + "Instruction");
     }
@@ -51,7 +56,7 @@ public class SMLInstructionFactory {
         }
         Object[] result = new Object[fields.length];
         for (int i = 0; i < fields.length; i++) {
-            if (cArgs[i].isInstance(i)) { // checks to see if parameter is an Int
+            if (cArgs[i].getSimpleName().equals("int")) { // checks to see if parameter is an Int
                 result[i] = Integer.parseInt(fields[i]);
             } else { // can otherwise assume the parameter is a String
                 result[i] = fields[i];
