@@ -9,27 +9,34 @@ import java.lang.reflect.InvocationTargetException;
 public class SMLInstructionFactory {
 
     public Instruction makeInstruction(String[] fields) {
+        Instruction result = null;
         try {
             Class instructionClass = Class.forName(generateClassName(fields[1]));
-            Constructor constructor = instructionClass.getConstructor();
-            Object[] args = generateConstructorArgs(fields, constructor.getParameterTypes());
-            return (Instruction) constructor.newInstance(args);
+            Constructor[] constructor = instructionClass.getConstructors();
+            System.out.println("how many constructors? " + constructor.length);
+            System.out.println("how many params does that constructor have?" + constructor[0].getParameterCount());
+            System.out.println("and they are: ");
+            Class[] cParams = constructor[0].getParameterTypes();
+            for (Class c : cParams) {
+                System.out.println(c.getSimpleName());
+            }
+            Object[] args = generateConstructorArgs(fields, constructor[0].getParameterTypes());
+            result = (Instruction) constructor[0].newInstance(args);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        }
+        catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-
+        return result;
     }
 
     private String generateClassName(String prefix) {
-        return (prefix.substring(0, 1).toUpperCase() + prefix.substring(1).toLowerCase()) + "Instruction.class";
+        return ("sml." + prefix.substring(0, 1).toUpperCase() + prefix.substring(1).toLowerCase() + "Instruction");
     }
 
     /**
