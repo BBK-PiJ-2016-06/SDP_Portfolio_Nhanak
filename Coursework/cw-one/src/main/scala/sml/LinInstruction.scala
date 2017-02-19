@@ -2,7 +2,7 @@ package sml
 
 case class LinInstruction(label: String, opcode: String, register: Int, value: Int) extends Instruction(label, opcode) {
 
-  // retrieves an item from the register by index, inserts value into it
+  // retrieves an register from the machine by index and updates its value
   override def execute(m: Machine) =
     m.regs(register) = value
 

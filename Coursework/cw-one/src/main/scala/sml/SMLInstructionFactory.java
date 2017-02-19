@@ -10,9 +10,9 @@ public class SMLInstructionFactory {
 
     /**
      * Method dissects a line from an SML program as a String
-     * Interprets what type of Instruction class to build and instantiates and that Instruction's
-     * parameters. The invokes instructor to create and return an Instruction class
-     * @param fields a single line as a String[] from an SML file
+     * Interprets what type of Instruction class to build and instantiates using that Instruction's
+     * parameters. Then invokes constructor to create and return an Instruction class
+     * @param fields a single line from an SML file where each word is placed in to a String[]
      * @return Instruction object reflecting the type of instruction and parameters indicated in SML file
      */
     public Instruction makeInstruction(String[] fields) {
