@@ -1,4 +1,4 @@
-name := """exercises week04"""
+name := "exercises week07"
 
 version := "1.0"
 
