@@ -4,22 +4,22 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 public class SingletonProtected implements Serializable {
+
     private static final long serialVersionUID = -1093810940935189395L;
     private static SingletonProtected sc = new SingletonProtected();
 
-    private SingletonProtected() {
+    private SingletonProtected() { // protects against reflection
         if (sc != null) {
             throw new IllegalStateException("Already created.");
         }
     }
 
+    // acts as a substitute for Class.forName()
     private static Class getClass(String classname) throws ClassNotFoundException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         if (classLoader == null)
             classLoader = SingletonProtected.class.getClassLoader();
         return (classLoader.loadClass(classname));
-
-
     }
 
     public static SingletonProtected getInstance() {
