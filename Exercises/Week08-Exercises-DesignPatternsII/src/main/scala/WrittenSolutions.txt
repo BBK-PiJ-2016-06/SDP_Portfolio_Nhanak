@@ -1,0 +1,14 @@
+Solutions to questions requiring written solutions for Exercises on Design Patterns II
+
+1.) (a) Briefly describe the Strategy Design Pattern
+
+    Adding new functionality to a superclass which you want to pass on to its subclasses. You add the functionality in
+    an interface which has the functionality and add it as an object within your main subclass. This allows flexibility
+    in how the subclasses implement this new behavior.
+
+    (b) When is it appropriate to use the Strategy Design Pattern?
+
+    When you want to add similar functionality to some classes which are part of the same "inheritance" family
+    but they will implement this functionality in a unique way, or not at all.
+
+
