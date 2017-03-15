@@ -9,6 +9,7 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
     (b) When is it appropriate to use the Strategy Design Pattern?
 
     When you want to add similar functionality to some classes which are part of the same "inheritance" family
-    but they will implement this functionality in a unique way, or not at all.
+    but they will implement this functionality in a unique way, or not at all. So basically, when you want to make a
+    change to your superclass without breaking your subclass.
 
 
