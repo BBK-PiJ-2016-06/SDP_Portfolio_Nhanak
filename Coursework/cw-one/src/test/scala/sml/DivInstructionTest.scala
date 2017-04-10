@@ -55,10 +55,11 @@ class DivInstructionTest extends FunSpec with GivenWhenThen {
 
 
       When("calling execute with out of bounds fields, it throws IndexOutOfBoundsExceptions")
-      for (i <- divInstArray.indices)
+      for (i <- divInstArray.indices) {
         intercept[IndexOutOfBoundsException] {
           divInstArray(i).execute(m)
         }
+      }
     }
 
 

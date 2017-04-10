@@ -27,5 +27,5 @@ class Translator(fileName: String) {
 }
 
 object Translator {
-  def apply(file: String) = new Translator(file)
+  def apply(file: String): Translator = new Translator(file)
 }

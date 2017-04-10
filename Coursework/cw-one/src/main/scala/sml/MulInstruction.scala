@@ -6,8 +6,13 @@ package sml
 class MulInstruction(label: String, op: String, val result: Int, val op1: Int, val op2: Int)
   extends Instruction(label, op) {
 
-  //fetches values of two registers from machine, multiplies the values and stores result in indicated register
-  override def execute(m: Machine) = {
+  /**
+    * Fetches values of two registers from machine,
+    * multiplies the values and stores result in indicated register.
+    *
+    * @param m a Machine with pre-loaded values in its registers
+    */
+  override def execute(m: Machine): Unit = {
     val value1 = m.regs(op1)
     val value2 = m.regs(op2)
     m.regs(result) = value1 * value2
@@ -20,6 +25,6 @@ class MulInstruction(label: String, op: String, val result: Int, val op1: Int, v
 
 object MulInstruction {
 
-  def apply(label: String, result: Int, op1: Int, op2: Int) =
+  def apply(label: String, result: Int, op1: Int, op2: Int): MulInstruction =
     new MulInstruction(label, "mul", result, op1, op2)
 }

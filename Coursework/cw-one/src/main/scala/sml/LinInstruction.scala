@@ -2,9 +2,12 @@ package sml
 
 case class LinInstruction(label: String, opcode: String, register: Int, value: Int) extends Instruction(label, opcode) {
 
-  // retrieves an register from the machine by index and updates its value
-  override def execute(m: Machine) =
-    m.regs(register) = value
+  /**
+    * Loads a value to store in the machine's specified register
+    *
+    * @param m a Machine with pre-loaded values in its registers
+    */
+  override def execute(m: Machine): Unit = m.regs(register) = value
 
   override def toString(): String = {
     super.toString + " register " + register + " value is " + value + "\n"
@@ -12,6 +15,6 @@ case class LinInstruction(label: String, opcode: String, register: Int, value: I
 }
 
 object LinInstruction {
-  def apply(label: String, register: Int, value: Int) =
+  def apply(label: String, register: Int, value: Int): LinInstruction =
     new LinInstruction(label, "lin", register, value)
 }
