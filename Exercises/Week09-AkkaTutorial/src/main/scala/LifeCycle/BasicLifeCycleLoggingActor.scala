@@ -6,14 +6,18 @@ import akka.event.LoggingReceive
 
 class BasicLifecycleLoggingActor extends Actor with ActorLogging{
 
+  var counter = 0;
+
   log.info ("Inside BasicLifecycleLoggingActor Constructor")
   log.info (context.self.toString())
   override def preStart() ={
-    log.info("Inside the preStart method of BasicLifecycleLoggingActor")
+    counter+= 1
+    log.info(s"Inside the preStart method of BasicLifecycleLoggingActor $counter times")
   }
 
   def receive = LoggingReceive{
-    case "hello" => log.info ("hello")
+      case "hello" => log.info ("hello")
+      case "Stop" => log.info("Stopping via message"); context.stop(self)
   }
 
   override def postStop()={
