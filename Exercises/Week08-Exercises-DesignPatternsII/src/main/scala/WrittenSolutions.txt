@@ -13,3 +13,8 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
     change to your superclass without breaking your subclass.
 
 
+3.) When is it appropriate to use an abstract factory?
+
+    An abstract factory is appropriate to use when you want to hide the creation of objects from the client. Also
+    it is appropriate to use when you may be creating new types of objects later on down the road, but don't know
+    what these are, so you don't want to have to go back and modify everything.

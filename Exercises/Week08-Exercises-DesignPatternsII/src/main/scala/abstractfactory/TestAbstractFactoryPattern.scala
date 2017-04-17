@@ -14,3 +14,10 @@ object TestAbstractFactoryPattern {
     println(msg)
   }
 }
+
+/*
+ParserFactoryProducer -> takes in string which tells it what type of Factory to produce
+  , makes an AbstractParserFactory
+    AbstractParserFactory -> makes an XMLParser
+        XMLParser -> spits out a String as a message msg
+*/
