@@ -15,3 +15,9 @@ object TestBuilderPattern {
     println(carBuilder.getCar)
   }
 }
+
+/*
+Make a specific carBuilder
+    Make a Cardirector containing said carBuilder
+      tell the director to build a car
+*/

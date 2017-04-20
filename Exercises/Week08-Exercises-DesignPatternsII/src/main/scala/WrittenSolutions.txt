@@ -18,3 +18,15 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
     An abstract factory is appropriate to use when you want to hide the creation of objects from the client. Also
     it is appropriate to use when you may be creating new types of objects later on down the road, but don't know
     what these are, so you don't want to have to go back and modify everything.
+
+5.) “In general, the details of object construction, such as instantiating and
+    initialising the components that comprise the object, are kept within the
+    object, often as part of its constructor.”
+
+    Comment on this statement with reference to modularity and construction bloat.
+
+    If an object uses a lot of construction relationships, that is, it contains/creates many objects of other classes,
+    it is susceptible to constructor bloat if those objects are instantiated within the main object's constructor.
+     This can cause there to be too many parameters to the constructor and reduces the modularity of your main class.
+     If the classes it hold get extended or modified later on, this could mean you have to make changes to your main
+     object as well. Using the builder pattern helps to reduce this dependency and keeps your main object modular.3
