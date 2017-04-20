@@ -38,3 +38,8 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
      b. You would do this when you need to decouple the implementation from the client. By providing a facade to
         the client program, you don't need to give the client the details of the performance, nor instatiate
         many objects within the client, as it all happens under the hood.
+
+  8.) One would want to use the Bridge facade when you have an abstraction which uses other classes to help
+        implement itself. This decouples the implementation so that the two may function separately. It also
+        allows for one to continously add functionality to the "interior" classes without having to change
+        the exterior classes.
