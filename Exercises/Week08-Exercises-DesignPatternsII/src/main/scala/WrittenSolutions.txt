@@ -29,4 +29,12 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
     it is susceptible to constructor bloat if those objects are instantiated within the main object's constructor.
      This can cause there to be too many parameters to the constructor and reduces the modularity of your main class.
      If the classes it hold get extended or modified later on, this could mean you have to make changes to your main
-     object as well. Using the builder pattern helps to reduce this dependency and keeps your main object modular.3
+     object as well. Using the builder pattern helps to reduce this dependency and keeps your main object modular.
+
+ 7.) a. The Facade pattern uses a facade class which holds a list of objects (which often share the same interface
+        but have different implementations) and instantiates them upon construction. The Facade is able to call
+        upon those objects to perform their functionality, but keeps that "under the hood".
+
+     b. You would do this when you need to decouple the implementation from the client. By providing a facade to
+        the client program, you don't need to give the client the details of the performance, nor instatiate
+        many objects within the client, as it all happens under the hood.
