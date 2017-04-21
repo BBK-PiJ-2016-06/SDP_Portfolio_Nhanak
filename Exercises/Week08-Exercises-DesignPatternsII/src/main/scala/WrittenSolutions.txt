@@ -43,3 +43,15 @@ Solutions to questions requiring written solutions for Exercises on Design Patte
         implement itself. This decouples the implementation so that the two may function separately. It also
         allows for one to continously add functionality to the "interior" classes without having to change
         the exterior classes.
+
+  11.)  a. The composite pattern is using a tree structure to store objects of a class together.
+        b. It's used when you want to treat a group of objects together like a single object.
+        c. The four participants in the composite pattern are:
+            1. The Component, the main interface containing a method which performs a functionality.
+            2. The Composite, which implements the Component and holds a collection of Leafs. It performs
+                the shared method(s) by calling on its collection of leafs to perform the shared method. It also
+                may have its own information and fields.
+            3. A Composite which holds a collection of all the composites. This allows the shared method to be
+                performed by all available leafs, as this "main" composite calls it collection of composites, which
+                in turn call on their collection of leaves.
+            4. Leaf. Implements the Component, and actually performs the operation of the shared method.
