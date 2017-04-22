@@ -14,6 +14,7 @@ class ThreadPool(n: Int) {
 
   for (i <- 0 until n) {
     jobThreads(i) = new Worker("Pool Thread " + i)
+    println(s"Starting Job Thread $i")
     jobThreads(i).start()
   }
 
@@ -25,12 +26,12 @@ class ThreadPool(n: Int) {
   }
 
   def shutdownPool: Unit = {
-    while (!jobQueue.isEmpty) 
-    try {
+    while (!jobQueue.isEmpty)
+      try {
         Thread.sleep(1000)
-    } catch {
-      case e: InterruptedException => e.printStackTrace()
-    }
+      } catch {
+        case e: InterruptedException => e.printStackTrace()
+      }
     shutdown = true
     for (workerThread <- jobThreads) {
       workerThread.interrupt()
@@ -39,14 +40,16 @@ class ThreadPool(n: Int) {
 
   private class Worker(name: String) extends Thread(name) {
 
-    override def run = {
-      while (!shutdown) 
-      try {
-        val r: Job = jobQueue.take()
-        r.run
-      } catch {
-        case e: InterruptedException => {}
-      }
+    override def run: Unit = {
+      while (!shutdown)
+        try {
+          val r: Job = jobQueue.take()
+          println(s"Worker $name about to run on ${r.getClass.getSimpleName}")
+          r.run
+        } catch {
+          case e: InterruptedException => {}
+        }
     }
   }
+
 }

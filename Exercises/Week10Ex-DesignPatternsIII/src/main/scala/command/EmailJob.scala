@@ -2,7 +2,9 @@ package command
 
 class EmailJob extends Job {
 
-  def setEmail(email: Email): Unit = ???
+  private var email : Email = _
 
-  override def run(): Unit = ???
+  def setEmail(email: Email): Unit = this.email = email
+
+  override def run(): Unit = email.sendEmail()
 }
